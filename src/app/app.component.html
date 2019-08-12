@@ -5,6 +5,8 @@
   <!-- percorrer this com ngfor -->
   <li *ngFor="let todo of todos">
     {{ todo.id }}. {{ todo.task }} |
-    <button>CONCLUIR</button> | <button>REMOVER</button>
+    <button *ngIf="!todo.done">CONCLUIR</button> |
+    <button *ngIf="todo.done">REFAZER</button> |
+    <button>REMOVER</button>
   </li>
 </ul>
