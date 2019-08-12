@@ -17,5 +17,24 @@ export class AppComponent {
     this.todos.push(new Todo(3, 'Cortar o cabelo', true));
   }
 
-  //Removvendo itens da lista
+  alteraTexto() {
+    this.title = 'Lista de tarefas'
+  }
+
+  //Métodos de Ação
+
+  remove(todo: Todo) {
+    const index = this.todos.indexOf(todo);
+    if (index !== -1) {
+      this.todos.splice(index, 1);
+    }
+  }
+
+  markAsDone(todo: Todo) {
+    todo.done = true
+  }
+
+  markAsUndone(todo) {
+    todo.done = false
+  }
 }
