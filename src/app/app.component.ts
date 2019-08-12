@@ -42,10 +42,6 @@ export class AppComponent {
     this.form.reset();
   }
 
-  alteraTexto() {
-    this.title = 'Lista de tarefas'
-  }
-
   //Métodos de Ação
 
   remove(todo: Todo) {
@@ -75,6 +71,6 @@ export class AppComponent {
   //ler do localStorage e popular tarefas
   load() {
     const data = localStorage.getItem('todos');
-    this.todos = JSON.parse(data);
+    data ? this.todos = JSON.parse(data) : this.todos[''];
   }
 }
