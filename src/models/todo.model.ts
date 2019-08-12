@@ -2,7 +2,7 @@ export class Todo {
   //métodos construtores
   constructor(
     public id: Number,
-    public task: String,
+    public title: String,
     public done: Boolean,
   ) { }
 }
